@@ -12,3 +12,4 @@ The binary is standard jar file. It would be created inside target folder.
 
 Usage: 
  java -jar jksExportKey-x.y.jar <keystore> <alias> <password>
+ 
