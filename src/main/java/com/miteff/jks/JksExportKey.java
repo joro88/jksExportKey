@@ -5,7 +5,6 @@
  *
  * How to export the private key from keystore?
  * Does keytool not have an option to do so?
- * This example use the "testkeys" file that comes with JSSE 1.0.3
  * Georgi Mitev: Some patches applied to work 
  * Alexey Zilber: Ported to work with Base64Coder: http://www.source-code.biz/snippets/java/2.htm
  
@@ -25,10 +24,8 @@ import biz.source_code.base64Coder.Base64Coder;
 class JksExportKey {
     public static void main(String args[]) throws Exception{
 		if (args.length < 2) {
-			//Yes I know this sucks (the password is visible to other users via ps
-			// but this was a quick-n-dirty fix to export from a keystore to pkcs12
-			// someday I may fix, but for now it'll have to do.
-//			System.err.println("Usage: java JksExportKey <keystore> <alias> <password>");
+			// Yes I know it is not good to pass password in console but 
+            // it is a quick-n-dirty fix to export from a keystore to pkcs12
 			System.err.println("Usage: java -jar jksExportKey-x.y.jar <keystore> <alias> <password>");
 			System.exit(1);
 		}
@@ -66,8 +63,6 @@ class JksExportKey {
 	System.out.println("-----END PRIVATE KEY-----");
 
 	}
-
-// From http://javaalmanac.com/egs/java.security/GetKeyFromKs.html
 
    public KeyPair getPrivateKey(KeyStore keystore, String alias, char[] password) {
         try {
