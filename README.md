@@ -8,6 +8,11 @@ You need maven as it is a maven project
 > mvn package
 
 # Usage
-The binary is standard jar file. It would be created inside target folder.
+The binary is standard jar file. It will be created inside target folder.
 
 > java -jar jksExportKey-x.y.jar <keystore> <alias> <password>
+
+> java -jar <jar.file> <jks.file> <alias.in.jks> <jks.password> > <private-key.pkcs8.key>
+
+# More information
+[https://dev.miteff.com/](https://dev.miteff.com/)
